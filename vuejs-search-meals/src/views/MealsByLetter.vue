@@ -19,7 +19,7 @@
 
 import { onMounted, watch } from 'vue';
 import { useRoute } from 'vue-router';
-import { computed } from "vue";
+import { computed } from "@vue/reactivity";
 import store from '../store';
 import MealItem from '../components/MealItem.vue';
 
@@ -34,7 +34,7 @@ watch(route, () => {
 })
 
 onMounted(() => {
-store.dispatch('searchMealsByLetter', route.params.letter)
+    store.dispatch('searchMealsByLetter', route.params.letter)
 })
 
 

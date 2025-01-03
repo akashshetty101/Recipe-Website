@@ -14,7 +14,7 @@ export function searchMealsByLetter({ commit }, letter) {
 
 export function searchMealsByIngredient({ commit }, ing) {
   axiosClient.get(`filter.php?i=${ing}`).then(({ data }) => {
-    commit("setMealsByIngredients", data.meals);
+    commit("setMealsByIngredient", data.meals);
   });
 }
 
