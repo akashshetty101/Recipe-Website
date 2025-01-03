@@ -6,6 +6,7 @@ export default {
       colors: {
         olive: {
           100: '#636b2f', 
+          500: '#3e4b1d',
         },
       },
     },
