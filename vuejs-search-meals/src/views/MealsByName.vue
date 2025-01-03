@@ -3,7 +3,7 @@
         <input 
         type="text" 
         v-model="keyword"
-        class ="rounded border-2 border-grey-200 w-full" 
+        class ="rounded border-2 bg-white border-grey-200 w-full" 
         placeholder="Search for Meals" 
         @change="searchMeals"
         />
@@ -27,7 +27,12 @@ const keyword = ref('');
 const meals = computed(() => store.state.searchedMeals);
 
 function searchMeals(){
-   store.dispatch('searchMeals', keyword.value);
+    if(keyword.value){ 
+        store.dispatch('searchMeals', keyword.value);
+    } 
+    else { 
+        store.commit('setSearchedMeals', []);
+    }
 }
 
 onMounted(() => {
