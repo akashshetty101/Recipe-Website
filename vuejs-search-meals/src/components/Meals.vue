@@ -1,7 +1,7 @@
 <template>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-8">
       <MealItem 
-        v-for="meal of meals" 
+        v-for="meal in meals" 
         :key="meal.idMeal" 
         :meal="meal" 
       />
@@ -25,7 +25,7 @@
   </script>
   
   <style scoped>
-  /* add a hover for cards */
+  /* hover for cards */
   .grid div:hover {
     transform: scale(1.05);
     transition: transform 0.2s ease-in-out;

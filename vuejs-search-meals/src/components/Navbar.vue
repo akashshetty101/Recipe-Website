@@ -13,6 +13,9 @@
         <router-link :to="{name: 'ingredients'}" class="inline-flex items-center px-2 h-full transistion-colors hover:bg-olive-100 hover:text-white">
           Meals by ingredients
         </router-link>
+        <router-link :to="{name: 'Chatbot'}" class="inline-flex items-center px-2 h-full transistion-colors hover:bg-olive-100 hover:text-white">
+          Chatbot
+        </router-link>
         
       </div>
     </header>

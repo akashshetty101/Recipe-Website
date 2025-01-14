@@ -7,6 +7,7 @@ import MealsByName from "../views/MealsByName.vue";
 import MealsByIngredient from "../views/MealsByIngredient.vue";
 import MealDetails from "../views/MealDetails.vue";
 import Ingredients from "../views/Ingredients.vue";
+import Recipybot from "../views/Recipybot.vue";
 
 
 const routes = [
@@ -48,6 +49,11 @@ const routes = [
         path: "/meal/:id",
         name: "MealDetails",
         component: MealDetails,
+      },
+      {
+        path: "/chatbot",
+        name: "Chatbot",
+        component: Recipybot,
       },
     ],
   },

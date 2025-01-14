@@ -5,7 +5,12 @@
           </router-link>
       </div>
 
-    <Meals :meals="meals" />
+    <div v-if="meals.length">
+        <Meals :meals="meals" />
+    </div>
+    <div v-else>
+        No meals found for this letter.
+    </div>
 
 </template>
 
@@ -21,15 +26,15 @@ import Meals from '../components/Meals.vue';
 
 const route = useRoute();
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split("");
-const meals = computed(() => store.state.mealsByLetter)
+const meals = computed(() => store.state.mealsByLetter);
 
 watch(route, () => {
-    store.dispatch('searchMealsByLetter', route.params.letter)
-})
+    store.dispatch('searchMealsByLetter', route.params.letter);
+});
 
 onMounted(() => {
-    store.dispatch('searchMealsByLetter', route.params.letter)
-})
+    store.dispatch('searchMealsByLetter', route.params.letter);
+});
 
 
 </script>
